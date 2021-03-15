@@ -60,14 +60,14 @@ G.discord.on('message', (message) => {
     switch (command) {
         case `ping`: return message.reply(`Hey, This message had a latency of ${timeTaken}ms.`)
         case `my avatar?`: return message.reply(message.author.displayAvatarURL())
-        case `hi`: return commandTwo.reply(message)
+        case `hi`: return G.command.reply.reply(message)
     }
 
     // Comm handler
     switch (com) {
-        case `play`: return commandOne.execute(message, args, serverStack, queue)
-        case `skip`: return commandThree.skip(message, serverStack)
-        case `stop`: return commandFour.stop(message, serverStack)
+        case `play`: return G.command.execute.execute(message, args, serverStack, queue)
+        case `skip`: return G.command.skip.skip(message, serverStack)
+        case `stop`: return G.command.stop.stop(message, serverStack)
     }
 
     // Return unknown command error
